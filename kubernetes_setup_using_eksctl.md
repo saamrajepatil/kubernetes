@@ -32,6 +32,20 @@ You can follow same procedure in the official  AWS document [Getting started wit
    IAM user should have access to   
    IAM   
    EC2   
+   
+   and 1 EKS custom policy with below permissions.
+   
+   {
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "eksadministrator",
+            "Effect": "Allow",
+            "Action": "eks:*",
+            "Resource": "*"
+        }
+    ]
+}
    VPC    
    CloudFormation
 
