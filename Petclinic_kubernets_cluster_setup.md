@@ -6,6 +6,27 @@ dowmload dokcer pipeline, kubernets cli, git,ECR plugins in jenkins.
 
 Attach IAM role :  with admin access, EKS, ECR permisssons.
 
+
+
+aws configure using jenkins user:
+
+aws configure for jenkins user:
+aws configure
+access key :
+secret key:
+region us-east-1:
+
+
+
+
+vi /etc/passwd
+jenkins user
+
+echo "jenkins ALL=(ALL) NOPASSWD:ALL" | sudo tee /etc/sudoers.d/jenkins > /dev/null
+
+
+login using jenins user :
+
 curl -o kubectl https://amazon-eks.s3.us-west-2.amazonaws.com/1.19.6/2021-01-05/bin/linux/amd64/kubectl
 chmod +x ./kubectl
 mv ./kubectl /usr/local/bin
@@ -16,22 +37,6 @@ curl --silent --location "https://github.com/weaveworks/eksctl/releases/latest/d
 sudo mv /tmp/eksctl /usr/local/bin
 eksctl version
 
-
-
-aws configure using jenkins user:
-
-aws configure for jenkins user:
-
-access key
-secret key
-region us-east-1
-
-
-
-vi /etc/passwd
-jenkins user
-
-echo "jenkins ALL=(ALL) NOPASSWD:ALL" | sudo tee /etc/sudoers.d/jenkins > /dev/null
 
 Setup Kubernts cluser using jenkins user :
 
