@@ -20,7 +20,8 @@ eksctl version
 
 aws configure using jenkins user:
 
-aws configure
+aws configure for jenkins user:
+
 access key
 secret key
 region us-east-1
@@ -32,11 +33,17 @@ jenkins user
 
 echo "jenkins ALL=(ALL) NOPASSWD:ALL" | sudo tee /etc/sudoers.d/jenkins > /dev/null
 
+Setup Kubernts cluser using jenkins user :
 
 eksctl create cluster --name petclinicdev \
 --region us-east-1 \
 --node-type t2.micro \
 --nodes-min 2 \
 --nodes-max 2
+
+check /var/lib/jenkins/.kube/config is present on the server.
+
+
+Run the pipeline job using jenkinsfile from spring-petclinic repo
 
 JAVA_HOME=/usr/lib/jvm/java-17-amazon-corretto
